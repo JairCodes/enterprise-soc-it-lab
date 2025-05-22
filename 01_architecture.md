@@ -23,6 +23,8 @@ Hosts Active Directory, DNS, and GPO configurations. Provides a realistic enterp
 - **Windows 10 Client**  
 Domain-joined workstation used to simulate end-user behavior, generate logs, test GPOs, and validate endpoint visibility within the SIEM.
 
+- **Kali Linux (Attacker VM)**  
+Deployed on an isolated network to simulate threat actor behavior, generate malicious traffic, and validate log correlation and detection logic.
 ---
 
 ## Network Segmentation
