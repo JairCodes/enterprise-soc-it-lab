@@ -9,7 +9,7 @@ The goal of this lab is to simulate a small enterprise SOC and IT environment fo
 ## Core Components
 
 - **pfSense**  
-Acts as the central router and firewall, handling NAT, DNS forwarding, and LAN/WAN segmentation. It simulates network boundaries such as internal LAN and (planned) DMZ zones.
+ Acts as the central router and firewall, handling NAT, DNS forwarding, and network segmentation. Configured with three interfaces (WAN, LAN, OPT1) to separate trusted and untrusted zones for layered defense testing.
 
 - **Debian Log Collector**  
 Serves as an intermediate log forwarder, configured with Filebeat and Logstash to collect logs from endpoints and send them to Security Onion and Splunk.
@@ -27,10 +27,16 @@ Domain-joined workstation used to simulate end-user behavior, generate logs, tes
 
 ## Network Segmentation
 
-pfSense is configured to segment the virtual environment into distinct internal networks:
+pfSense is configured with three virtual interfaces to create a segmented, enterprise-style environment:
 
-- **LAN** – Internal network hosting Windows Server, Windows 10 client, and Debian log collector  
-- **WAN** – Interface used to connect pfSense to the external internet via NAT  
-- **(Planned)** DMZ or additional internal networks using VirtualBox’s internal adapters for isolated attacker boxes, public-facing services, or honeypot simulation
+- **WAN (em0)** – Connects to the external internet via NAT (VirtualBox)  
+- **LAN (em1)** – Trusted internal network hosting Windows Server, Windows 10 Client, and the Debian log collector  
+- **OPT1 / targetnet (em2)** – Isolated attacker network hosting the Kali Linux VM
 
-Each VM is assigned either a static IP or is managed via pfSense’s DHCP server. Firewall rules are implemented to control communication between network segments, replicating real-world access control and perimeter defense strategies.
+The Kali VM is intentionally placed on `OPT1` to simulate external or untrusted threat activity. pfSense firewall rules are configured to:
+
+- Allow outbound internet access from OPT1 
+- Block traffic from OPT1 → LAN by default  
+- Allow selective, temporary access from OPT1 to LAN to test detection logic and Splunk alerting
+
+Each segment uses either static IPs or pfSense-managed DHCP. This configuration enables safe, controlled testing of lateral movement, reconnaissance, and log visibility across isolated environments, reflecting real-world SOC conditions.
