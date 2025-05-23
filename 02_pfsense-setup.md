@@ -20,3 +20,13 @@ The pfSense VM uses **three network adapters** in VirtualBox:
 - **WAN (NAT):** Gets a dynamic IP (`10.0.2.15/24`)
 - **LAN (labnet):** Assigned IP `10.0.10.1/24`
 - **OPT1 (targetnet):** Assigned IP `10.0.20.1/24`
+
+## IP Addressing & Acess
+
+Each interface was manually assigned the following IPs via the console:
+
+- **WAN (em0):** `10.0.2.15/24` via DHCP
+- **LAN (em1):** `10.0.10.1/24`
+- **OPT1 (em2):** `10.0.20.1/24`
+
+![image](https://github.com/user-attachments/assets/033637aa-f253-48ae-b120-88d3676779ce)
