@@ -28,12 +28,18 @@ Deployed on an isolated network to simulate threat actor behavior, generate mali
 ---
 
 ## Network Segmentation
+<img width="1886" alt="Architecture" src="https://github.com/user-attachments/assets/13da18ad-b338-45aa-8aa8-13a7626887b8" />
+
+*Figure 1: High-level network topology illustrating segmentation between the Management, Internal, and Attacker networks routed through pfSense.*
 
 pfSense is configured with three virtual interfaces to create a segmented, enterprise-style environment:
 
 - **WAN (em0)** – Connects to the external internet via NAT (VirtualBox)  
-- **LAN (em1)** – Trusted internal network hosting Windows Server, Windows 10 Client, and the Debian log collector  
-- **OPT1 / targetnet (em2)** – Isolated attacker network hosting the Kali Linux VM
+- **LAN / int-net (em1)** – Internal network (`10.0.10.1/24`) hosting Windows Server and Windows 10 Client  
+- **OPT1 / attack-net (em2)** – Isolated attacker network (`10.0.20.1/24`) hosting the Kali Linux VM  
+- **OPT2 / mgmt-net (em3)** – Management network (`10.0.30.1/24`) hosting the Splunk SIEM server and Debian log collector
+
+The **mgmt-net** is restricted to authorized administrative access and is used for secure monitoring, log analysis, and system administration. It is segmented to prevent exposure to the attacker and internal networks.
 
 The Kali VM is intentionally placed on `OPT1` to simulate external or untrusted threat activity. pfSense firewall rules are configured to:
 
