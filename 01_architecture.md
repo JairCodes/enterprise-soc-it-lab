@@ -9,7 +9,7 @@ The goal of this lab is to simulate a small enterprise SOC and IT environment fo
 ## Core Components
 
 - **pfSense**  
- Acts as the central router and firewall, handling NAT, DNS forwarding, and network segmentation. Configured with three interfaces (WAN, LAN, OPT1) to separate trusted and untrusted zones for layered defense testing.
+ Acts as the central router and firewall, handling NAT, DNS forwarding, and network segmentation. Configured with four interfaces (WAN, LAN, OPT1, OPT2) to separate trusted and untrusted zones for layered defense testing.
 
 - **Debian Log Collector**  
 Serves as an intermediate log forwarder, configured with Filebeat and Logstash to collect logs from endpoints and send them to Security Onion and Splunk.
