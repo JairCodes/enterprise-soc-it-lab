@@ -18,7 +18,7 @@ The pfSense VM uses **four network adapters** in VirtualBox:
 | 3       | Internal Network   | em2       | attack-net  | Isolated network for the attacker (kali)     |
 | 4       | Internal Network   | em3       | mgmt-net    | Secure admin/SOC network (Splunk, Log Server)|
 
-## IP Addressing & Acess
+## IP Addressing & Access
 
 Each interface was manually assigned the following IPs via the console:
 
