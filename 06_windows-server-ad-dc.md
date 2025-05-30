@@ -79,6 +79,9 @@ After the installation completes:
 ```
 Root domain name: lab.local
 ```
+
+![image](https://github.com/user-attachments/assets/f19b7a4b-106f-454c-9dd5-64ca8833d20c)
+
 5. Complete the wizard and reboot when prompted
    
 ---
@@ -87,14 +90,16 @@ Root domain name: lab.local
 
 After reboot:
 Verify Active Directory,
-- in Server Manager, click on:
-  -  `Tools -> Active Directory Users and Computers`
+- In Server Manager, click on:
+  -  `Tools` -> `Active Directory Users and Computers`
   - You should see the domain tree for `Lab.local`
  
 ![image](https://github.com/user-attachments/assets/a50254cf-d63d-41a4-a3f3-e84070354fac)
 
   
 Verify DNS,
-- Again `Tools` 
+- In Server Manager, click on:
+    -  `Tools` -> `DNS`
+    -  Confirm zones for `lab.local` and `_msdcs.lab.local`
 
 ![image](https://github.com/user-attachments/assets/bf8d904f-5a1d-46e3-b59b-b7eb68f1ffce)
