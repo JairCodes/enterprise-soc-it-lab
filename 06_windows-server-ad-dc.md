@@ -46,7 +46,7 @@ To ensure the server can reach the pfSense gateway, we ran:
 ```cmd
 ping 10.0.10.1
 ```
-Sucessful replies confirmed correct network setup:
+Sucessful replies confirmed correct network setup: <br>
 ![image](https://github.com/user-attachments/assets/b6e075f0-93bd-4206-80e3-b10e1cdfa746)
 
 ---
@@ -103,3 +103,7 @@ Verify DNS,
     -  Confirm zones for `lab.local` and `_msdcs.lab.local`
 
 ![image](https://github.com/user-attachments/assets/bf8d904f-5a1d-46e3-b59b-b7eb68f1ffce)
+
+> Now that Active Directory and DNS have been verified, the domain controller is fully operational.  
+> Client machines can now be joined to the `lab.local` domain and receive Group Policy settings.  
+> The Windows Server DC is ready to service authentication, DNS resolution, and Group Policy management for the `int-net` environment.  
