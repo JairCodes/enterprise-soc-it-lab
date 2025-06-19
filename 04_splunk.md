@@ -145,6 +145,8 @@ Filebeat and Logstash were verified as follows:
   ```bash
   index=main sourcetype=syslog "FILEBEAT → LOGSTASH → SPLUNK"
   ```
+![image](https://github.com/user-attachments/assets/afbf995e-b039-4702-8582-37b4ff67b3c6)
+
 
 ### 4. pfSense Syslog Ingestion (UDP 514)
 To ingest logs from pfSense:
