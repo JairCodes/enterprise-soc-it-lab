@@ -28,7 +28,8 @@ Deployed on an isolated network to simulate threat actor behavior, generate mali
 ---
 
 ## Network Segmentation
-<img width="1886" alt="Architecture" src="https://github.com/user-attachments/assets/13da18ad-b338-45aa-8aa8-13a7626887b8" />
+<img width="1886" height="2389" alt="Untitled" src="https://github.com/user-attachments/assets/b1cf3910-b46d-447e-85df-aad6d4b7e30c" />
+
 
 *Figure 1: High-level network topology illustrating segmentation between the Management, Internal, and Attacker networks routed through pfSense.*
 
